@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:19:54 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/27 16:13:58 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/06 17:55:35 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,14 @@ char	*ft_substr(const char *s, unsigned int start, size_t len)
 	char	*ptr;
 
 	i = 0;
-	ptr = malloc((sizeof(char) * len) + 1);
-	while (i < len)
-	{
-		if (s[i + start] == '\0')
-			return (NULL);
-		ptr[i] = s[i + start];
-		i++;
-	}
-	ptr[i + 1] = '\0';
+	if (!s)
+		return (NULL);
+	if (start >= ft_strlen(s))
+		return (ft_strdup(""));
+	if (len > ft_strlen(s) - start)
+		len = ft_strlen(s) - start;
+	ptr = (char *) ft_calloc((len + 1), sizeof(char));
+	if (ptr)
+		ft_memcpy(ptr, (char *)s + start, len);
 	return (ptr);
 }

@@ -6,14 +6,15 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:43:50 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/23 18:26:58 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/05 17:57:17 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int			ft_strlen(char *str);
-static int	is_there(char *str, char *set, size_t pos);
+
+
+static int	is_there(const char *str, const char *set, size_t pos);
 
 char	*ft_strtrim(char const *s1, char const *set)
 {
@@ -23,17 +24,32 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ptr;
 
 	start = 0;
-	end = ft_strlen((char *) s1) - 1;
+	end = ft_strlen(s1) - 1;
 	si = 0;
-	while (is_there((char *)s1, (char *)set, start))
+	// printf("before setcheck\n");
+//	if (!set)
+//		return (NULL);
+	// printf("after setcheck\n");
+	while (is_there(s1, set, start))
 		start++;
-	while (is_there((char *)s1, (char *)set, end))
+//	if (start)
+//		start--;
+	while (is_there(s1, set, end))
 		end--;
 	end++;
-	printf("start: %lu\nend: %lu\n\n", start, end);
-	ptr = malloc(sizeof(char) * (end - start) + 1);
-	if (ptr == NULL)
+	// printf("after whiles\n");
+	// printf("start: %lu end: %lu\n", start, end);
+	if (end != 0)
+	{
+		ptr = malloc(sizeof(char) * (end - start) + 1);
+//		printf("n from if end: %lu\nn from start: %lu\n", end, start);
+	}
+	else
+		ptr = malloc(sizeof(char) * 1);
+	// printf("before pointer check\n");
+	if (!ptr)
 		return (NULL);
+	// printf("after pointer check\n");
 	while (start < end)
 	{
 		ptr[si] = s1[start];
@@ -41,20 +57,30 @@ char	*ft_strtrim(char const *s1, char const *set)
 		start++;
 	}
 	ptr[start] = '\0';
-	return (ptr);
+	return ((char *)ptr);
 }
 
-static int	is_there(char *str, char *set, size_t pos)
+static int	is_there(const char *str, const char *set, size_t pos)
 {
 	size_t	i;
 
 	i = 0;
-	while (set[i] != '\0')
+	while (set[i])
 	{
 		if (str[pos] == set[i])
 			return (1);
-		else
-			i++;
+		i++;
 	}
 	return (0);
 }
+
+///*
+int	main()
+{
+	char	str[] = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n";
+	char	set[] = "Hello \t  Please\n Trim me !";
+
+	printf("String:\n|%s|\n\nTrimmed string:\n|%s|\n", str, ft_strtrim(str, set));
+	return (0);
+}
+//*/

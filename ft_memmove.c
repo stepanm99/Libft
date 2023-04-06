@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:33:16 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/28 18:08:59 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:08:37 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,5 @@ void	*ft_memmove(char *dest, char *src, int l)
 		}
 		return (dest);
 	}
+	return (NULL);
 }

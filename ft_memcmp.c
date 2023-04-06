@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 20:15:53 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/02 21:01:55 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/03 19:07:39 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,16 +30,5 @@ int	ft_memcmp(const void *str1, const void *str2, size_t n)
 			n--;
 		}
 	}
-	
 	return (0);
 }
-
-/*if (n == 0)
-		return (0);
-	while ((*(char *)(str1) == *(char *)(str2)) && (n != 0))
-	{
-		str1++;
-		str2++;
-		n--;
-	}
-	return (*(unsigned char *)(str1) - *(unsigned char *)(str2));*/

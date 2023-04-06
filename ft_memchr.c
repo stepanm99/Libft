@@ -6,12 +6,11 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/19 19:52:18 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/29 18:13:38 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/04 18:38:46 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include<stdlib.h>
 
 void	*ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,10 +19,10 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	i = 0;
 	if (n == 0)
 		return (NULL);
-	n = n - 1;
-	while (*(char *)(s + i) != (char)c && i < n)
+	n--;
+	while (*(char *)(s + i) != (char) c && i < n)
 		i++;
-	if (*(char *)(s + i) == c)
+	if (*(char *)(s + i) == (char) c)
 		return ((void *)(s + i));
 	else
 		return (NULL);
