@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 14:43:50 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/05 17:57:17 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:59:24 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -80,7 +80,7 @@ int	main()
 	char	str[] = "   \t  \n\n \t\t  \n\n\nHello \t  Please\n Trim me !\n   \n \n \t\t\n";
 	char	set[] = "Hello \t  Please\n Trim me !";
 
-	printf("String:\n|%s|\n\nTrimmed string:\n|%s|\n", str, ft_strtrim(str, set));
+//	printf("String:\n|%s|\n\nTrimmed string:\n|%s|\n", str, ft_strtrim(str, set));
 	return (0);
 }
 //*/

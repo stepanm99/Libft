@@ -6,15 +6,15 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 17:09:42 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/06 16:07:30 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:59:49 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include<stdlib.h>
-# include<stdio.h>
-# include<string.h>
+//# include<stdio.h>
+//# include<string.h>
 # include<unistd.h>
 
 int		ft_atoi(const char *str);

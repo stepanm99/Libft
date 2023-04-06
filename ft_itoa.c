@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:49:16 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/05 21:05:41 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/06 21:56:17 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ char	*ft_itoa(int n)
 	l = getlen(n);
 	if (neg)
 		l++;
-	ptr = malloc((l + 1) * sizeof(char));
+	ptr = ft_calloc(l + 1, sizeof(char));
 	if (!ptr)
 		return (0);
 	getdigit(n, ptr, neg, l);
@@ -49,7 +49,7 @@ static int	getlen(int n)
 	len = 0;
 	if (n == 0)
 		return (1);
-	while (n > 0)
+	while (n)
 	{
 		n = n / 10;
 		len++;
@@ -82,7 +82,7 @@ static char	*edge(void)
 {
 	char	*ptr;
 
-	ptr = malloc((12) * sizeof(char));
+	ptr = ft_calloc(12, sizeof(char));
 	ptr[11] = '\0';
 	ptr[0] = '-';
 	ptr[1] = '2';
