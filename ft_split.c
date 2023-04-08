@@ -6,12 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/06 16:07:56 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/06 21:42:13 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/08 19:25:47 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-
+#include<stdio.h>
+/*
 static size_t	wordcountido(char const *s, char c)
 {
 	size_t	i;
@@ -67,25 +68,35 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	allocatido(ret, s, c);
 	return (ret);
-}
-/*
+}*/
+
+
+
+
+
+
+
 int main()
 {
-	char	test[] = "a,bkkkke,cee,deee,eeeef";
+	char	test[] = "c,a,bkkkke,cee,deee,eeeef";
 	char	**res;
 	size_t	i;
 
 	i = 0;
 	res = ft_split(test, ',');
+	printf("\n\n\nMAINMAINMAINMAINMAINMAINMAINMAINMAIN\n\n\n");
 	while (*res[i] != '\0')
 	{
-		printf("from res: %s", res[i]);
+		printf("from res: |%s|\n", res[i]);
 		i++;
 	}
 	return (0);
-}*/
+}
 
-/*int		wordl(char *s, char c)
+
+
+
+int		wordl(char *s, char c)
 {
 	int	i;
 	
@@ -108,7 +119,7 @@ int		wordc(char *s, char c)
 	n = 1;
 	while (s[i] != '\0')
 	{
-		if (s[i] == c)
+		if (s[i] == c && s[i + 1] != c)
 		{
 			n++;
 		}
@@ -123,13 +134,18 @@ int		dumpitoit(char *d, char *s, char c)
 
 	printf("from dumpitoit\n");
 	i = 0;
-	if (!s || !s)
+	if (!s || !d)
 		return (0);
 	printf("afterif from dumpitoit\n");
-	printf("string in dumpitoit: |%s|", s);
-	while (s[i] != c)
+	printf("string in dumpitoit: |%s|\n", s);
+	if (s[i] == c && s[i + 1] == c)
 	{
-		printf("while in a while in dumpitoit\n");
+		while (s[i] != c && s[i] != '\0')
+			i++;
+	}
+	while ((s[i] != c) && s[i] != '\0')
+	{
+		printf("while in a while in dumpitoit\ni: %lu\n", i);
 		d[i] = s[i];
 		i++;
 	}
@@ -150,7 +166,10 @@ char	**ft_split(char const *s, char c)
 	temp = ft_strdup(s);
 	i = 0;
 	wc = wordc(temp, c);
-	ret = malloc((wc + 1) * sizeof(char));
+	ret = malloc((wc + 1) * sizeof(char *));
+	if(!ret)
+		return (NULL);
+	ret[wc + 1] = NULL;
 	printf("word count: %d\n", wc);
 	while (ft_strlen(temp))
 	{
@@ -161,13 +180,15 @@ char	**ft_split(char const *s, char c)
 		ret[i] = malloc((wl + 1) * sizeof(char));
 		printf("after ret allocation\n");
 		if (!dumpitoit(ret[i], temp, c))
+		{
+			//fremory()
 			return (NULL);
+		}
 		printf("after if with dumpitoit\n");
 		i++;
 	}
 	ret[i] = ft_calloc(1, sizeof(char));
 	ft_memset(ret[i], '\0', 1);
-	free(temp);
+//	free(temp);
 	return (ret);
 }
-*/

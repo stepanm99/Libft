@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 13:36:34 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/05 20:00:03 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/08 17:26:00 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	char	*ptr;
 
 	len = ft_strlen(s1) + ft_strlen(s2) + 1;
-	ptr = malloc(sizeof(char) * len);
+	ptr = (char *)malloc(sizeof(char) * len);
 	if (!ptr)
 		return (NULL);
-	ptr = ft_memcpy(ptr, s1, len);
-	ft_strlcat(ptr, s2, len);
+	ptr = ft_memcpy(ptr, (char *)s1, len);
+	ft_strlcat(ptr, (char *)s2, len);
 	return (ptr);
 }
