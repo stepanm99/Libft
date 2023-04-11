@@ -27,4 +27,6 @@ maintoupper.c
 test.c
 testisalpha.c
 todo.txt
-tok
+*.rpt
+tok.txt
+.gitignore

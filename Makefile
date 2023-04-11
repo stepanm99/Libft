@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:59:52 by smelicha          #+#    #+#              #
-#    Updated: 2023/04/08 17:30:45 by smelicha         ###   ########.fr        #
+#    Updated: 2023/04/11 20:32:49 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,14 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft
 		ft_strlcat.c ft_strlcpy.c ft_strlen.c ft_strncmp.c ft_strnstr.c ft_strrchr.c ft_strtrim.c ft_substr.c \
 		ft_tolower.c ft_toupper.c ft_itoa.c ft_calloc.c ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
-#BON = ft_bonus.c
+BON = ft_lstnew.c
 
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
 
 OBJ	= $(SRC:.c=.o)
-#OBJB =
+OBJB = $(BON:.c=.o)
 
 all: $(NAME)
 
@@ -32,10 +32,10 @@ $(NAME): $(OBJ)
 	@ar rcs $(NAME) $(OBJ)
 	@echo "Done!"
 
-#$(NAME): $(OBJB)
-#	@echo "Linking $@"
-#	@ar rcs $(NAME) $(OBJ)
-#	@echo "Done!"
+$(NAME): $(OBJB)
+	@echo "Linking $@"
+	@ar rcs $(NAME) $(OBJ)
+	@echo "Done!"
 
 #$(OBJ): $(SRC)
 #	$(CC) $(CFLAGS) -c $(SRC)
