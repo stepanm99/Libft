@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/27 15:49:16 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/06 21:56:17 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:16:53 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,6 +83,8 @@ static char	*edge(void)
 	char	*ptr;
 
 	ptr = ft_calloc(12, sizeof(char));
+	if (!ptr)
+		return (0);
 	ptr[11] = '\0';
 	ptr[0] = '-';
 	ptr[1] = '2';

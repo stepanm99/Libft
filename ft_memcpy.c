@@ -6,24 +6,28 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 17:13:04 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/28 18:04:24 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/09 19:08:32 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	*ft_memcpy(char *dest, char *src, int l)
+void	*ft_memcpy(void *dest, const void *src, size_t l)
 {
-	int	i;
+	char		*destination;
+	const char	*source;
+	size_t		i;
 
 	i = 0;
-	if (dest == NULL && src == NULL)
+	source = src;
+	destination = dest;
+	if (destination == NULL && source == NULL)
 		return (NULL);
 	while (l > 0)
 	{
-		dest[i] = src[i];
-		l = l - 1;
-		i = i + 1;
+		destination[i] = source[i];
+		l--;
+		i++;
 	}
 	return (dest);
 }

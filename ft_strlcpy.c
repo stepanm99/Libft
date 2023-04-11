@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/17 15:49:46 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/02 17:35:38 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/10 22:23:54 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,23 +29,3 @@ size_t	ft_strlcpy(char *dest, char *src, size_t size)
 	dest[i] = '\0';
 	return (srclen);
 }
-
-/*
-size_t	ft_strlcpy(char *dest, char *src, size_t size)
-{
-	size_t	i;
-
-	i = 0;
-	while (size > 0)
-	{
-		dest[i] = src[i];
-		size--;
-		i++;
-	}
-	dest[i - 1] = '\0';
-	i = 0;
-	while (src[i] != '\0')
-		i++;
-	return (i);
-}
-*/
