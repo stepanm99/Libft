@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:59:52 by smelicha          #+#    #+#              #
-#    Updated: 2023/04/11 20:32:49 by smelicha         ###   ########.fr        #
+#    Updated: 2023/04/14 20:00:31 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -27,14 +27,16 @@ OBJB = $(BON:.c=.o)
 
 all: $(NAME)
 
-$(NAME): $(OBJ)
+$(NAME): $(OBJ) $(OBJB)
 	@echo "Linking $@"
-	@ar rcs $(NAME) $(OBJ)
+	@ar rcs $(NAME) $(OBJ) $(OBJB)
 	@echo "Done!"
 
+bonus: $(NAME)
+
 $(NAME): $(OBJB)
-	@echo "Linking $@"
-	@ar rcs $(NAME) $(OBJ)
+	@echo "Linking bonuses $@"
+	@ar rcs $(NAME) $(OBJB)
 	@echo "Done!"
 
 #$(OBJ): $(SRC)
@@ -45,7 +47,7 @@ $(NAME): $(OBJB)
 	@$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
-	rm -f $(OBJ)
+	rm -f $(OBJ) $(OBJB)
 
 fclean: clean
 	rm -f $(NAME)

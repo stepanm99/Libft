@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/11 18:43:32 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/14 18:53:53 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/14 19:32:18 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@ t_list	*ft_lstnew(void *content)
 
 	head = NULL;
 	head = (t_list *)malloc(sizeof(t_list));
+	if (head == NULL)
+		return (NULL);
 	head->content = (void *)content;
 	head->next = NULL;
 	return (head);

@@ -30,3 +30,5 @@ todo.txt
 *.rpt
 tok.txt
 .gitignore
+*.o
+*.a
