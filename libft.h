@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/23 17:09:42 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/11 20:40:18 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/13 20:52:21 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,9 @@
 //# include<string.h>
 # include<unistd.h>
 
-typedef struct	s_list
+typedef struct s_list
 {
-	void			*conent;
+	void			*content;
 	struct s_list	*next;
 }					t_list;
 
@@ -33,7 +33,7 @@ int		ft_isprint(int arg);
 void	*ft_memchr(const void *s, int c, size_t n);
 int		ft_memcmp(const void *str1, const void *str2, size_t n);
 void	*ft_memcpy(void *dest, const void *src, size_t l);
-void	*ft_memmove(char *dest, char *src, int l);
+void	*ft_memmove(void *dest, const void *src, size_t l);
 void	*ft_memset(void *str, int c, size_t l);
 char	*ft_strchr(const char *str, int c);
 char	*ft_strdup(const char *s);
@@ -57,6 +57,6 @@ void	ft_putstr_fd(char *s, int fd);
 void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 char	**ft_split(char const *s, char c);
-t_list	*ft_lstnew(void *content)
+t_list	*ft_lstnew(void *content);
 
 #endif

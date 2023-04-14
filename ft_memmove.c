@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/16 15:33:16 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/10 22:13:00 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/13 21:04:04 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static void	dsts(char *dest, char *src, int l)
+static void	dsts(char *dest, const char *src, size_t l)
 {
 	size_t	i;
 
@@ -25,7 +25,7 @@ static void	dsts(char *dest, char *src, int l)
 	}
 }
 
-static void	sstd(char *dest, char *src, int l)
+static void	sstd(char *dest, const char *src, size_t l)
 {
 	size_t	i;
 
@@ -38,18 +38,18 @@ static void	sstd(char *dest, char *src, int l)
 	}
 }
 
-void	*ft_memmove(char *dest, char *src, int l)
+void	*ft_memmove(void *dest, const void *src, size_t l)
 {
 	if (dest == src)
 		return (dest);
 	if (dest < src)
 	{
-		dsts(dest, src, l);
+		dsts((char *)dest, (const char *)src, l);
 		return (dest);
 	}
 	if (dest > src)
 	{
-		sstd(dest, src, l);
+		sstd((char *)dest, (const char *)src, l);
 		return (dest);
 	}
 	return (NULL);
