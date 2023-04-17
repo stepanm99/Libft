@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/04/05 20:56:38 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/10 22:19:14 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 17:18:20 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,21 @@
 
 void	ft_putnbr_fd(int n, int fd)
 {
-	char	*s;
+	char	*s[11];
 	size_t	i;
 
 	i = 0;
-	if (n == -2147483648)
+if (n == -2147483648)
 		write(fd, "-2147483648", 11);
+}
+
+//static void	write
+
+
+
+//from ft_putnbr_fd
+
+/*	
 	else
 	{
 		s = ft_itoa(n);
@@ -30,6 +39,5 @@ void	ft_putnbr_fd(int n, int fd)
 			write(fd, &s[i], 1);
 			i++;
 		}
-		free(s);
-	}
-}
+//		free(s);
+	}*/
