@@ -6,7 +6,7 @@
 #    By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/03/16 15:59:52 by smelicha          #+#    #+#              #
-#    Updated: 2023/04/17 19:11:34 by smelicha         ###   ########.fr        #
+#    Updated: 2023/04/18 00:04:38 by smelicha         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,6 @@ SRC = ft_atoi.c ft_bzero.c ft_calloc.c ft_isalnum.c ft_isalpha.c ft_isascii.c ft
 		ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_split.c
 BON = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c ft_lstclear.c \
 		ft_lstiter.c ft_lstmap.c
-
 
 CC = cc
 FLAGS = -Wall -Wextra -Werror
@@ -38,9 +37,6 @@ bonus: $(OBJB)
 	@echo "Linking $@"
 	@ar rcs libft.a $(OBJB)
 	@echo "Done!"
-
-#$(OBJ): $(SRC)
-#	$(CC) $(CFLAGS) -c $(SRC)
 
 %.o: %.c
 	@echo "Compiling $<"
