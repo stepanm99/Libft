@@ -6,20 +6,22 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 16:47:12 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/23 18:13:42 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:40:26 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(char *str, int l)
+void	ft_bzero(void *s, size_t l)
 {
-	int	i;
+	size_t	i;
+	char	*ptr;
 
+	ptr = s;
 	i = 0;
 	while (l > 0)
 	{
-		str[i] = '\0';
+		ptr[i] = '\0';
 		i++;
 		l--;
 	}

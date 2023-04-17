@@ -6,7 +6,7 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/20 16:38:18 by smelicha          #+#    #+#             */
-/*   Updated: 2023/04/04 19:13:57 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:54:08 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static void	search(const char *str1, const char *str2,
 	}
 }
 
-char	*ft_strnstr(const char *str1, const char *str2, unsigned long n)
+char	*ft_strnstr(const char *str1, const char *str2, size_t n)
 {
 	unsigned long	c[3];
 	size_t			i;

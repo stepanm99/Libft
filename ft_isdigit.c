@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 14:22:14 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/31 16:25:10 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:44:29 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isdigit(int arg)
+int	ft_isdigit(int c)
 {
-	return (arg > 47 && arg < 58);
+	return (c > 47 && c < 58);
 }

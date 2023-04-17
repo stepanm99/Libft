@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:38:50 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/31 16:23:49 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:45:16 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isprint(int arg)
+int	ft_isprint(int c)
 {
-	return (arg >= 32 && arg < 127);
+	return (c >= 32 && c < 127);
 }

@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:32:34 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/31 16:24:10 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:43:40 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isascii(int arg)
+int	ft_isascii(int c)
 {
-	return (arg >= 0 && arg < 128);
+	return (c >= 0 && c < 128);
 }

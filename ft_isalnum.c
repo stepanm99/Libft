@@ -6,13 +6,13 @@
 /*   By: smelicha <smelicha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/14 15:00:44 by smelicha          #+#    #+#             */
-/*   Updated: 2023/03/31 16:24:46 by smelicha         ###   ########.fr       */
+/*   Updated: 2023/04/17 23:41:51 by smelicha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_isalnum(int a)
+int	ft_isalnum(int c)
 {
-	return ((a > 47 && a < 58) || (a > 64 && a < 91) || (a > 96 && a < 123));
+	return ((c > 47 && c < 58) || (c > 64 && c < 91) || (c > 96 && c < 123));
 }
